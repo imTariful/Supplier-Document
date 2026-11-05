@@ -916,9 +916,7 @@ curl http://localhost:3000/api/dashboard/summary
 
 ---
 
-## 17. License
 
-This project is proprietary software developed for Aamar Garments Ltd. All rights reserved.
 
 ---
 
@@ -932,18 +930,3 @@ For technical support or questions:
 
 ---
 
-## Changelog
-
-### Version 2.0.0 (2026-11-05)
-- Removed Google AI Studio/Gemini dependencies
-- Implemented deterministic pattern-based extraction
-- Updated all documentation to remove AI references
-- Added comprehensive API documentation
-- Improved test coverage to 47 tests
-
-### Version 1.0.0 (2026-11-04)
-- Initial release
-- Basic PDF extraction and verification
-- LangGraph workflow implementation
-- React/TypeScript frontend
-- SQLite database integration
