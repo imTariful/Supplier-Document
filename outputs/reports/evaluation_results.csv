@@ -1,0 +1,11 @@
+supplier_id,supplier_name,expected_decision,actual_decision,is_correct,triggered_rule_ids,evidence_count,verification_notes
+PACK-01,Vertex Textiles & Trims Ltd,APPROVE,APPROVE,True,,0,All 5 items priced <= max; exact quantities; advance 15% <= 20%; remaining payment 45d; delivery 25d <= 30d; penalty 0.5%/wk; VAT 15% separate; TIN & BIN valid; validity 60d >= 30d; arithmetic 100% correct.
+PACK-02,Apex Apparel Accessories Ltd,REJECT,REJECT,True,R01,1,Item A quoted unit price ৳510.00 exceeds max price ৳480.00 by +6.25% which is greater than the 3% reject threshold.
+PACK-03,Bengal Stitch & Pack Solutions,REJECT,REJECT,True,R02,1,Advance payment demanded is 25% of total order value which exceeds the mandatory 20% ceiling.
+PACK-04,Meghna Fasteners & Accessories Ltd,REJECT,REJECT,True,R07,1,Late delivery penalty rate is stipulated at 0.25% per week which fails the required minimum threshold of 0.5% per week of order value.
+PACK-05,Padma Packaging & Labeling Corp,REJECT,REJECT,True,R04|R05,2,Supplier TIN and BIN are both missing/unregistered in both quotation and supply agreement.
+PACK-06,Jamuna Yarn & Thread Mills,REJECT,REJECT,True,R06,1,Promised delivery schedule is 52 days after purchase order date exceeding the maximum allowable 45-day ceiling.
+PACK-07,Rupsha Trims & Poly Industries,NEEDS_HUMAN_REVIEW,NEEDS_HUMAN_REVIEW,True,H01|H04,2,Cotton twill fabric quoted at ৳488 (+1.67% above max price; within 0-3% minor deviation band) and delivery is 38 days (within 31-45 days window).
+PACK-08,Karnafuli Zipper & Button Co,NEEDS_HUMAN_REVIEW,NEEDS_HUMAN_REVIEW,True,H02,1,Cotton twill fabric quoted quantity is 10000 m compared to 12000 m requested (deviation is 16.67% which exceeds the 5% quantity tolerance).
+PACK-09,Shitalakshya Dyeing & Trims Ltd,NEEDS_HUMAN_REVIEW,NEEDS_HUMAN_REVIEW,True,H03|H07,2,Remaining payment terms scheduled at 75 days after delivery (>60 days window) and quotation validity is 20 days (<30 days minimum).
+PACK-10,Surma Carton & Packaging Works,NEEDS_HUMAN_REVIEW,NEEDS_HUMAN_REVIEW,True,H05|H06,2,VAT is not separately shown at 15% (all-inclusive clause) and stated subtotal contains an unexplained ৳120000 arithmetic mismatch.

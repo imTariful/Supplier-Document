@@ -1,0 +1,3710 @@
+{
+  "summary": {
+    "total_evaluated": 10,
+    "correct_decisions": 10,
+    "incorrect_decisions": 0,
+    "accuracy": 100.0,
+    "false_approvals": 0,
+    "false_approval_rate": 0.0,
+    "number_approved": 1,
+    "number_rejected": 5,
+    "number_requiring_human_review": 4,
+    "processing_failures": 0,
+    "unresolved_cases": 0,
+    "confusion_matrix": {
+      "APPROVE": {
+        "APPROVE": 1,
+        "REJECT": 0,
+        "NEEDS_HUMAN_REVIEW": 0
+      },
+      "REJECT": {
+        "APPROVE": 0,
+        "REJECT": 5,
+        "NEEDS_HUMAN_REVIEW": 0
+      },
+      "NEEDS_HUMAN_REVIEW": {
+        "APPROVE": 0,
+        "REJECT": 0,
+        "NEEDS_HUMAN_REVIEW": 4
+      }
+    }
+  },
+  "results": [
+    {
+      "supplier_id": "PACK-01",
+      "supplier_name": "Vertex Textiles & Trims Ltd",
+      "expected_decision": "APPROVE",
+      "actual_decision": "APPROVE",
+      "is_correct": true,
+      "expected_rule_ids": [],
+      "triggered_rule_ids": [],
+      "evidence_count": 0,
+      "evidence_records": [],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 470.0,
+          "price_deviation_pct": -2.0833333333333335
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.0,
+          "price_deviation_pct": -2.6315789473684212
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 205.0,
+          "price_deviation_pct": -2.380952380952381
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 92.0,
+          "price_deviation_pct": -3.1578947368421053
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 470.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 205.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 92.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "25 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 25 days",
+          "explanation": "Delivery timeline of 25 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "482910482910",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 482910482910 | BIN: 001928374-0101",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "001928374-0101",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 482910482910 | BIN: 001928374-0101",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-01_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nIn the event of delay in delivery beyond the agreed schedule, the Supplier shall pay a late-delivery penalty of 0.5% of total order\nvalue per week of delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "60 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 60 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,140,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-01_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7140000.0,
+        "vat_amount": 1071000.0,
+        "grand_total": 8211000.0,
+        "delivery_days": 25,
+        "validity_days": 60,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "470.00",
+            "line_total": "5640000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.00",
+            "line_total": "740000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "205.00",
+            "line_total": "164000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "92.00",
+            "line_total": "276000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "All 5 items priced <= max; exact quantities; advance 15% <= 20%; remaining payment 45d; delivery 25d <= 30d; penalty 0.5%/wk; VAT 15% separate; TIN & BIN valid; validity 60d >= 30d; arithmetic 100% correct."
+    },
+    {
+      "supplier_id": "PACK-02",
+      "supplier_name": "Apex Apparel Accessories Ltd",
+      "expected_decision": "REJECT",
+      "actual_decision": "REJECT",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "R01"
+      ],
+      "triggered_rule_ids": [
+        "R01"
+      ],
+      "evidence_count": 1,
+      "evidence_records": [
+        {
+          "rule_id": "R01",
+          "document": "pack-02_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n510.00\n6,120,000.00",
+          "extracted_value": "BDT 510.00 (+6.25%)",
+          "expected_condition": "Not more than BDT 494.40 (<= +3.0%)",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 510.0,
+          "price_deviation_pct": 6.25
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 38.0,
+          "price_deviation_pct": 0.0
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 210.0,
+          "price_deviation_pct": 0.0
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.5,
+          "price_deviation_pct": 0.0
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 95.0,
+          "price_deviation_pct": 0.0
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "FAILED",
+          "actual_value": "BDT 510.00 (+6.25%)",
+          "expected_value": "Not more than BDT 494.40 (<= +3.0%)",
+          "severity": "REJECT",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n510.00\n6,120,000.00",
+          "explanation": "ITEM-A (Cotton twill fabric, 280 gsm) quoted at BDT 510.00, exceeding max BDT 480.00 by 6.25% (> 3%)."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 38.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n38.00\n760,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 210.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n210.00\n168,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.50",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.50\n325,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 95.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n95.00\n285,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n510.00\n6,120,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n38.00\n760,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n210.00\n168,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.50\n325,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n95.00\n285,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "20.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 20.0%",
+          "explanation": "Advance payment of 20.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "28 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 28 days",
+          "explanation": "Delivery timeline of 28 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "771829401923",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 771829401923 | BIN: 002849102-0202",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "002849102-0202",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 771829401923 | BIN: 002849102-0202",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-02_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nThe Supplier agrees to a liquidated damage of 0.5% of order value per week of delay for failure to deliver within promised period.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,658,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-02_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7658000.0,
+        "vat_amount": 1148700.0,
+        "grand_total": 8806700.0,
+        "delivery_days": 28,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "510.00",
+            "line_total": "6120000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n510.00\n6,120,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "38.00",
+            "line_total": "760000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n38.00\n760,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "210.00",
+            "line_total": "168000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n210.00\n168,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.50",
+            "line_total": "325000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.50\n325,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "95.00",
+            "line_total": "285000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n95.00\n285,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Item A quoted unit price \u09f3510.00 exceeds max price \u09f3480.00 by +6.25% which is greater than the 3% reject threshold."
+    },
+    {
+      "supplier_id": "PACK-03",
+      "supplier_name": "Bengal Stitch & Pack Solutions",
+      "expected_decision": "REJECT",
+      "actual_decision": "REJECT",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "R02"
+      ],
+      "triggered_rule_ids": [
+        "R02"
+      ],
+      "evidence_count": 1,
+      "evidence_records": [
+        {
+          "rule_id": "R02",
+          "document": "pack-03_contract.pdf",
+          "page_number": 1,
+          "exact_text": "Contract Article 3: advance payment of 25.0%",
+          "extracted_value": "25.0%",
+          "expected_condition": "Not more than 20%",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 475.0,
+          "price_deviation_pct": -1.0416666666666667
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.5,
+          "price_deviation_pct": -1.3157894736842106
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 208.0,
+          "price_deviation_pct": -0.9523809523809523
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 94.0,
+          "price_deviation_pct": -1.0526315789473684
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 475.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n475.00\n5,700,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.50",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 208.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n208.00\n166,400.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 94.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n475.00\n5,700,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n208.00\n166,400.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "FAILED",
+          "actual_value": "25.0%",
+          "expected_value": "Not more than 20%",
+          "severity": "REJECT",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 25.0%",
+          "explanation": "Demanded advance payment of 25.0% exceeds the allowable company limit of 20%."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "30 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 30 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "30 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 30 days",
+          "explanation": "Delivery timeline of 30 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "552910482110",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 552910482110 | BIN: 003928103-0303",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "003928103-0303",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 552910482110 | BIN: 003928103-0303",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.75% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-03_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nLate delivery shall attract a penalty equal to 0.75% of order value per week of delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "40 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 40 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,218,400.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-03_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7218400.0,
+        "vat_amount": 1082760.0,
+        "grand_total": 8301160.0,
+        "delivery_days": 30,
+        "validity_days": 40,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "475.00",
+            "line_total": "5700000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n475.00\n5,700,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.50",
+            "line_total": "750000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "208.00",
+            "line_total": "166400.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n208.00\n166,400.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "94.00",
+            "line_total": "282000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Advance payment demanded is 25% of total order value which exceeds the mandatory 20% ceiling."
+    },
+    {
+      "supplier_id": "PACK-04",
+      "supplier_name": "Meghna Fasteners & Accessories Ltd",
+      "expected_decision": "REJECT",
+      "actual_decision": "REJECT",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "R07"
+      ],
+      "triggered_rule_ids": [
+        "R07"
+      ],
+      "evidence_count": 1,
+      "evidence_records": [
+        {
+          "rule_id": "R07",
+          "document": "pack-04_contract.pdf",
+          "page_number": 1,
+          "exact_text": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nIn case of delayed shipment, a token penalty of 0.25% of order value per week of delay shall be deducted.",
+          "extracted_value": "0.25% per week",
+          "expected_condition": "At least 0.5% of order value per week of delay",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 465.0,
+          "price_deviation_pct": -3.125
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 36.0,
+          "price_deviation_pct": -5.2631578947368425
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 200.0,
+          "price_deviation_pct": -4.761904761904762
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.3,
+          "price_deviation_pct": -3.076923076923077
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 90.0,
+          "price_deviation_pct": -5.2631578947368425
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 465.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n465.00\n5,580,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 36.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.00\n720,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 200.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n200.00\n160,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.30",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.30\n315,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 90.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n90.00\n270,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n465.00\n5,580,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.00\n720,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n200.00\n160,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.30\n315,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n90.00\n270,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "25 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 25 days",
+          "explanation": "Delivery timeline of 25 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "992810482012",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 992810482012 | BIN: 004928104-0404",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "004928104-0404",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 992810482012 | BIN: 004928104-0404",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Insufficient late-delivery penalty rate",
+          "status": "FAILED",
+          "actual_value": "0.25% per week",
+          "expected_value": "At least 0.5% of order value per week of delay",
+          "severity": "REJECT",
+          "document": "pack-04_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nIn case of delayed shipment, a token penalty of 0.25% of order value per week of delay shall be deducted.",
+          "explanation": "Contract specifies 0.25% per week, which is below the mandatory 0.5% minimum."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "50 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 50 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,045,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-04_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7045000.0,
+        "vat_amount": 1056750.0,
+        "grand_total": 8101750.0,
+        "delivery_days": 25,
+        "validity_days": 50,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "465.00",
+            "line_total": "5580000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n465.00\n5,580,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "36.00",
+            "line_total": "720000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.00\n720,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "200.00",
+            "line_total": "160000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n200.00\n160,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.30",
+            "line_total": "315000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.30\n315,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "90.00",
+            "line_total": "270000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n90.00\n270,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Late delivery penalty rate is stipulated at 0.25% per week which fails the required minimum threshold of 0.5% per week of order value."
+    },
+    {
+      "supplier_id": "PACK-05",
+      "supplier_name": "Padma Packaging & Labeling Corp",
+      "expected_decision": "REJECT",
+      "actual_decision": "REJECT",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "R04",
+        "R05"
+      ],
+      "triggered_rule_ids": [
+        "R04",
+        "R05"
+      ],
+      "evidence_count": 2,
+      "evidence_records": [
+        {
+          "rule_id": "R04",
+          "document": "pack-05_contract.pdf",
+          "page_number": 1,
+          "exact_text": "TIN: UNSPECIFIED | BIN: UNSPECIFIED",
+          "extracted_value": "Missing / Unregistered",
+          "expected_condition": "Valid 12-digit statutory TIN",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        },
+        {
+          "rule_id": "R05",
+          "document": "pack-05_contract.pdf",
+          "page_number": 1,
+          "exact_text": "TIN: UNSPECIFIED | BIN: UNSPECIFIED",
+          "extracted_value": "Missing / Unregistered",
+          "expected_condition": "Valid statutory BIN (VAT Registration)",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 470.0,
+          "price_deviation_pct": -2.0833333333333335
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.0,
+          "price_deviation_pct": -2.6315789473684212
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 205.0,
+          "price_deviation_pct": -2.380952380952381
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 91.0,
+          "price_deviation_pct": -4.2105263157894735
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 470.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 205.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 91.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "18.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 18.0%",
+          "explanation": "Advance payment of 18.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "28 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 28 days",
+          "explanation": "Delivery timeline of 28 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Missing supplier TIN",
+          "status": "FAILED",
+          "actual_value": "Missing / Unregistered",
+          "expected_value": "Valid 12-digit statutory TIN",
+          "severity": "REJECT",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: UNSPECIFIED | BIN: UNSPECIFIED",
+          "explanation": "Supplier Taxpayer Identification Number (TIN) is absent from submitted pack."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Missing supplier BIN",
+          "status": "FAILED",
+          "actual_value": "Missing / Unregistered",
+          "expected_value": "Valid statutory BIN (VAT Registration)",
+          "severity": "REJECT",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: UNSPECIFIED | BIN: UNSPECIFIED",
+          "explanation": "Supplier Business Identification Number (BIN) is missing from submitted pack."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-05_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nLate delivery penalty is stipulated at 0.5% of total order value per week of unexcused delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,137,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-05_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7137000.0,
+        "vat_amount": 1070550.0,
+        "grand_total": 8207550.0,
+        "delivery_days": 28,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "470.00",
+            "line_total": "5640000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.00",
+            "line_total": "740000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "205.00",
+            "line_total": "164000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "91.00",
+            "line_total": "273000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Supplier TIN and BIN are both missing/unregistered in both quotation and supply agreement."
+    },
+    {
+      "supplier_id": "PACK-06",
+      "supplier_name": "Jamuna Yarn & Thread Mills",
+      "expected_decision": "REJECT",
+      "actual_decision": "REJECT",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "R06"
+      ],
+      "triggered_rule_ids": [
+        "R06"
+      ],
+      "evidence_count": 1,
+      "evidence_records": [
+        {
+          "rule_id": "R06",
+          "document": "pack-06_contract.pdf",
+          "page_number": 1,
+          "exact_text": "Contract Article 2: deliver within 52 days",
+          "extracted_value": "52 days",
+          "expected_condition": "Not more than 45 days",
+          "calculation": null,
+          "status": "FAILED",
+          "decision_effect": "REJECT"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 472.0,
+          "price_deviation_pct": -1.6666666666666667
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.2,
+          "price_deviation_pct": -2.1052631578947367
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 206.0,
+          "price_deviation_pct": -1.9047619047619047
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.45,
+          "price_deviation_pct": -0.7692307692307693
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 93.0,
+          "price_deviation_pct": -2.1052631578947367
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 472.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n472.00\n5,664,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.20",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.20\n744,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 206.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n206.00\n164,800.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.45",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.45\n322,500.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 93.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n93.00\n279,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n472.00\n5,664,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.20\n744,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n206.00\n164,800.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.45\n322,500.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n93.00\n279,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Excessive delivery period",
+          "status": "FAILED",
+          "actual_value": "52 days",
+          "expected_value": "Not more than 45 days",
+          "severity": "REJECT",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 52 days",
+          "explanation": "Promised delivery of 52 days violates company procurement ceiling of 45 days."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "334910482911",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 334910482911 | BIN: 006928106-0606",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "006928106-0606",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 334910482911 | BIN: 006928106-0606",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.6% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-06_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nDelay penalty shall be assessed at 0.6% of order value per week of delay beyond promised completion.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,174,300.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-06_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7174300.0,
+        "vat_amount": 1076145.0,
+        "grand_total": 8250445.0,
+        "delivery_days": 52,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "472.00",
+            "line_total": "5664000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n472.00\n5,664,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.20",
+            "line_total": "744000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.20\n744,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "206.00",
+            "line_total": "164800.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n206.00\n164,800.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.45",
+            "line_total": "322500.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.45\n322,500.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "93.00",
+            "line_total": "279000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n93.00\n279,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Promised delivery schedule is 52 days after purchase order date exceeding the maximum allowable 45-day ceiling."
+    },
+    {
+      "supplier_id": "PACK-07",
+      "supplier_name": "Rupsha Trims & Poly Industries",
+      "expected_decision": "NEEDS_HUMAN_REVIEW",
+      "actual_decision": "NEEDS_HUMAN_REVIEW",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "H01",
+        "H04"
+      ],
+      "triggered_rule_ids": [
+        "H01",
+        "H04"
+      ],
+      "evidence_count": 2,
+      "evidence_records": [
+        {
+          "rule_id": "H01",
+          "document": "pack-07_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n488.00\n5,856,000.00",
+          "extracted_value": "BDT 488.00 (+1.67%)",
+          "expected_condition": "BDT 480.00 or below",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        },
+        {
+          "rule_id": "H04",
+          "document": "pack-07_contract.pdf",
+          "page_number": 1,
+          "exact_text": "Contract Article 2: deliver within 38 days",
+          "extracted_value": "38 days",
+          "expected_condition": "30 days or less for standard approval",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 488.0,
+          "price_deviation_pct": 1.6666666666666667
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.5,
+          "price_deviation_pct": -1.3157894736842106
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 205.0,
+          "price_deviation_pct": -2.380952380952381
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 94.0,
+          "price_deviation_pct": -1.0526315789473684
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "H01",
+          "rule_name": "Minor price deviation",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "BDT 488.00 (+1.67%)",
+          "expected_value": "BDT 480.00 or below",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n488.00\n5,856,000.00",
+          "explanation": "ITEM-A (Cotton twill fabric, 280 gsm) quoted at BDT 488.00, within minor deviation tolerance of +3% (+1.67%)."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.50",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 205.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 94.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n488.00\n5,856,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "H04",
+          "rule_name": "Delivery period requiring review",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "38 days",
+          "expected_value": "30 days or less for standard approval",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 38 days",
+          "explanation": "Promised delivery of 38 days is within 31 to 45 days, requiring commercial review."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "882910482912",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 882910482912 | BIN: 007928107-0707",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "007928107-0707",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 882910482912 | BIN: 007928107-0707",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-07_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nIn case of delay, 0.5% per week of order value will be deducted as late delivery penalty.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,372,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-07_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7372000.0,
+        "vat_amount": 1105800.0,
+        "grand_total": 8477800.0,
+        "delivery_days": 38,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "488.00",
+            "line_total": "5856000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n488.00\n5,856,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.50",
+            "line_total": "750000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.50\n750,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "205.00",
+            "line_total": "164000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "94.00",
+            "line_total": "282000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n94.00\n282,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Cotton twill fabric quoted at \u09f3488 (+1.67% above max price; within 0-3% minor deviation band) and delivery is 38 days (within 31-45 days window)."
+    },
+    {
+      "supplier_id": "PACK-08",
+      "supplier_name": "Karnafuli Zipper & Button Co",
+      "expected_decision": "NEEDS_HUMAN_REVIEW",
+      "actual_decision": "NEEDS_HUMAN_REVIEW",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "H02"
+      ],
+      "triggered_rule_ids": [
+        "H02"
+      ],
+      "evidence_count": 1,
+      "evidence_records": [
+        {
+          "rule_id": "H02",
+          "document": "pack-08_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "ITEM-A\nCotton twill fabric, 280 gsm\n10,000\nmetre\n470.00\n4,700,000.00",
+          "extracted_value": "10000 metre (16.67% diff)",
+          "expected_condition": "12000 metre (within +/- 5%)",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 10000.0,
+          "qty_deviation_pct": 16.666666666666668,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 470.0,
+          "price_deviation_pct": -2.0833333333333335
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.0,
+          "price_deviation_pct": -2.6315789473684212
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 205.0,
+          "price_deviation_pct": -2.380952380952381
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 92.0,
+          "price_deviation_pct": -3.1578947368421053
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 470.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n10,000\nmetre\n470.00\n4,700,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 205.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 92.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "10000 metre (16.67% diff)",
+          "expected_value": "12000 metre (within +/- 5%)",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n10,000\nmetre\n470.00\n4,700,000.00",
+          "explanation": "ITEM-A quoted quantity 10000 diverges from requested quantity 12000 by 16.67% (> 5%)."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "10.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 10.0%",
+          "explanation": "Advance payment of 10.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "28 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 28 days",
+          "explanation": "Delivery timeline of 28 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "112910482913",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 112910482913 | BIN: 008928108-0808",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "008928108-0808",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 112910482913 | BIN: 008928108-0808",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-08_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nLate delivery penalty is stipulated at 0.5% of order value per week of delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 6,200,000.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-08_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 6200000.0,
+        "vat_amount": 930000.0,
+        "grand_total": 7130000.0,
+        "delivery_days": 28,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "10000",
+            "unit": "metre",
+            "unit_price": "470.00",
+            "line_total": "4700000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n10,000\nmetre\n470.00\n4,700,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.00",
+            "line_total": "740000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "205.00",
+            "line_total": "164000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "92.00",
+            "line_total": "276000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Cotton twill fabric quoted quantity is 10000 m compared to 12000 m requested (deviation is 16.67% which exceeds the 5% quantity tolerance)."
+    },
+    {
+      "supplier_id": "PACK-09",
+      "supplier_name": "Shitalakshya Dyeing & Trims Ltd",
+      "expected_decision": "NEEDS_HUMAN_REVIEW",
+      "actual_decision": "NEEDS_HUMAN_REVIEW",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "H03",
+        "H07"
+      ],
+      "triggered_rule_ids": [
+        "H03",
+        "H07"
+      ],
+      "evidence_count": 2,
+      "evidence_records": [
+        {
+          "rule_id": "H03",
+          "document": "pack-09_contract.pdf",
+          "page_number": 1,
+          "exact_text": "Contract Article 3: settled within 75 days after delivery",
+          "extracted_value": "75 days after delivery",
+          "expected_condition": "30 to 60 days after delivery",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        },
+        {
+          "rule_id": "H07",
+          "document": "pack-09_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "Quotation validity is 20 days",
+          "extracted_value": "20 days",
+          "expected_condition": "At least 30 days",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 468.0,
+          "price_deviation_pct": -2.5
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 36.5,
+          "price_deviation_pct": -3.9473684210526314
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 204.0,
+          "price_deviation_pct": -2.857142857142857
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.35,
+          "price_deviation_pct": -2.3076923076923075
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 91.0,
+          "price_deviation_pct": -4.2105263157894735
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 468.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n468.00\n5,616,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 36.50",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.50\n730,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 204.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n204.00\n163,200.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.35",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.35\n317,500.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 91.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n468.00\n5,616,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.50\n730,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n204.00\n163,200.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.35\n317,500.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms outside allowable window",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "75 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 75 days after delivery",
+          "explanation": "Remaining payment deadline of 75 days is outside the standard 30\u201360 days window."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "26 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 26 days",
+          "explanation": "Delivery timeline of 26 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT compliance",
+          "status": "PASS",
+          "actual_value": "15% VAT separately itemized",
+          "expected_value": "15% VAT separately itemized",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation: 15% VAT separately itemized",
+          "explanation": "VAT is separately itemized at the statutory 15% rate."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "662910482914",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 662910482914 | BIN: 009928109-0909",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "009928109-0909",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 662910482914 | BIN: 009928109-0909",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-09_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nLiquidated damages for late delivery shall be 0.5% of total order value per week of delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity less than 30 days",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "20 days",
+          "expected_value": "At least 30 days",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 20 days",
+          "explanation": "Quotation is valid for only 20 days, risking price expiration during procurement review."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Financial arithmetic",
+          "status": "PASS",
+          "actual_value": "Subtotal: BDT 7,099,700.00",
+          "expected_value": "Accurate mathematical calculations",
+          "severity": "INFO",
+          "document": "pack-09_quotation.pdf",
+          "page": 1,
+          "evidence": "All line items, subtotal, VAT and grand total match exactly",
+          "explanation": "All financial arithmetic verified without discrepancies."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": 7099700.0,
+        "vat_amount": 1064955.0,
+        "grand_total": 8164655.0,
+        "delivery_days": 26,
+        "validity_days": 20,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "468.00",
+            "line_total": "5616000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n468.00\n5,616,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "36.50",
+            "line_total": "730000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n36.50\n730,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "204.00",
+            "line_total": "163200.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n204.00\n163,200.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.35",
+            "line_total": "317500.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.35\n317,500.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "91.00",
+            "line_total": "273000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n91.00\n273,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "Remaining payment terms scheduled at 75 days after delivery (>60 days window) and quotation validity is 20 days (<30 days minimum)."
+    },
+    {
+      "supplier_id": "PACK-10",
+      "supplier_name": "Surma Carton & Packaging Works",
+      "expected_decision": "NEEDS_HUMAN_REVIEW",
+      "actual_decision": "NEEDS_HUMAN_REVIEW",
+      "is_correct": true,
+      "expected_rule_ids": [
+        "H05",
+        "H06"
+      ],
+      "triggered_rule_ids": [
+        "H05",
+        "H06"
+      ],
+      "evidence_count": 2,
+      "evidence_records": [
+        {
+          "rule_id": "H05",
+          "document": "pack-10_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "Article 5: VAT is not separately shown",
+          "extracted_value": "VAT not separately itemized at 15%",
+          "expected_condition": "VAT separately itemized at statutory 15%",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        },
+        {
+          "rule_id": "H06",
+          "document": "pack-10_quotation.pdf",
+          "page_number": 1,
+          "exact_text": "Stated Grand Total: BDT 7,260,000.00",
+          "extracted_value": "BDT 7,260,000.00",
+          "expected_condition": "BDT 7,140,000.00",
+          "calculation": null,
+          "status": "REVIEW_REQUIRED",
+          "decision_effect": "NEEDS_HUMAN_REVIEW"
+        }
+      ],
+      "comparison_results": [
+        {
+          "item_code": "ITEM-A",
+          "requested_qty": 12000.0,
+          "quoted_qty": 12000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 480.0,
+          "quoted_unit_price": 470.0,
+          "price_deviation_pct": -2.0833333333333335
+        },
+        {
+          "item_code": "ITEM-B",
+          "requested_qty": 20000.0,
+          "quoted_qty": 20000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 38.0,
+          "quoted_unit_price": 37.0,
+          "price_deviation_pct": -2.6315789473684212
+        },
+        {
+          "item_code": "ITEM-C",
+          "requested_qty": 800.0,
+          "quoted_qty": 800.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 210.0,
+          "quoted_unit_price": 205.0,
+          "price_deviation_pct": -2.380952380952381
+        },
+        {
+          "item_code": "ITEM-D",
+          "requested_qty": 50000.0,
+          "quoted_qty": 50000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 6.5,
+          "quoted_unit_price": 6.4,
+          "price_deviation_pct": -1.5384615384615385
+        },
+        {
+          "item_code": "ITEM-E",
+          "requested_qty": 3000.0,
+          "quoted_qty": 3000.0,
+          "qty_deviation_pct": 0.0,
+          "max_unit_price": 95.0,
+          "quoted_unit_price": 92.0,
+          "price_deviation_pct": -3.1578947368421053
+        }
+      ],
+      "all_rule_results": [
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 470.00",
+          "expected_value": "<= BDT 480.00",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 37.00",
+          "expected_value": "<= BDT 38.00",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 205.00",
+          "expected_value": "<= BDT 210.00",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 6.40",
+          "expected_value": "<= BDT 6.50",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "R01",
+          "rule_name": "Excessive unit price",
+          "status": "PASS",
+          "actual_value": "BDT 92.00",
+          "expected_value": "<= BDT 95.00",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted unit price is within maximum allowable ceiling."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "12000 metre",
+          "expected_value": "12000 metre (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+          "explanation": "ITEM-A quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "20000 piece",
+          "expected_value": "20000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+          "explanation": "ITEM-B quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "800 cone",
+          "expected_value": "800 cone (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+          "explanation": "ITEM-C quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "50000 piece",
+          "expected_value": "50000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+          "explanation": "ITEM-D quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "H02",
+          "rule_name": "Quantity deviation",
+          "status": "PASS",
+          "actual_value": "3000 piece",
+          "expected_value": "3000 piece (+/- 5%)",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+          "explanation": "ITEM-E quoted quantity is compliant with purchase request."
+        },
+        {
+          "rule_id": "R02",
+          "rule_name": "Excessive advance payment",
+          "status": "PASS",
+          "actual_value": "15.0%",
+          "expected_value": "<= 20%",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: advance payment of 15.0%",
+          "explanation": "Advance payment of 15.0% complies with company procurement policy."
+        },
+        {
+          "rule_id": "H03",
+          "rule_name": "Payment terms",
+          "status": "PASS",
+          "actual_value": "45 days after delivery",
+          "expected_value": "30 to 60 days after delivery",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 3: settled within 45 days after delivery",
+          "explanation": "Payment terms are fully compliant with company procurement guidelines."
+        },
+        {
+          "rule_id": "R06",
+          "rule_name": "Delivery period",
+          "status": "PASS",
+          "actual_value": "28 days",
+          "expected_value": "<= 30 days",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "Contract Article 2: deliver within 28 days",
+          "explanation": "Delivery timeline of 28 days meets target schedule."
+        },
+        {
+          "rule_id": "H05",
+          "rule_name": "VAT presentation non-compliant",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "VAT not separately itemized at 15%",
+          "expected_value": "VAT separately itemized at statutory 15%",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "Article 5: VAT is not separately shown",
+          "explanation": "Statutory 15% VAT is not separately broken down on quotation or contract."
+        },
+        {
+          "rule_id": "R04",
+          "rule_name": "Supplier TIN",
+          "status": "PASS",
+          "actual_value": "222910482915",
+          "expected_value": "Valid TIN present",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 222910482915 | BIN: 010928110-1010",
+          "explanation": "Supplier TIN verified."
+        },
+        {
+          "rule_id": "R05",
+          "rule_name": "Supplier BIN",
+          "status": "PASS",
+          "actual_value": "010928110-1010",
+          "expected_value": "Valid BIN present",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "TIN: 222910482915 | BIN: 010928110-1010",
+          "explanation": "Supplier BIN verified."
+        },
+        {
+          "rule_id": "R07",
+          "rule_name": "Late-delivery penalty compliance",
+          "status": "PASS",
+          "actual_value": "0.5% per week",
+          "expected_value": ">= 0.5% per week",
+          "severity": "INFO",
+          "document": "pack-10_contract.pdf",
+          "page": 1,
+          "evidence": "ARTICLE 4: LATE DELIVERY PENALTY AND LIQUIDATED DAMAGES\nLate delivery penalty is agreed at 0.5% of total order value per week of delay.",
+          "explanation": "Contract contains a compliant late-delivery liquidated damages clause."
+        },
+        {
+          "rule_id": "H07",
+          "rule_name": "Quotation validity",
+          "status": "PASS",
+          "actual_value": "45 days",
+          "expected_value": ">= 30 days",
+          "severity": "INFO",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "Quotation validity is 45 days",
+          "explanation": "Quotation validity meets the mandatory 30-day minimum."
+        },
+        {
+          "rule_id": "H06",
+          "rule_name": "Grand total calculation mismatch",
+          "status": "REVIEW_REQUIRED",
+          "actual_value": "BDT 7,260,000.00",
+          "expected_value": "BDT 7,140,000.00",
+          "severity": "HUMAN_REVIEW",
+          "document": "pack-10_quotation.pdf",
+          "page": 1,
+          "evidence": "Stated Grand Total: BDT 7,260,000.00",
+          "explanation": "Stated grand total does not equal subtotal plus VAT (discrepancy: BDT 120,000.00)."
+        }
+      ],
+      "structured_quotation": {
+        "subtotal": null,
+        "vat_amount": null,
+        "grand_total": 7260000.0,
+        "delivery_days": 28,
+        "validity_days": 45,
+        "items": [
+          {
+            "item_code": "ITEM-A",
+            "description": "Cotton twill fabric, 280 gsm",
+            "quantity": "12000",
+            "unit": "metre",
+            "unit_price": "470.00",
+            "line_total": "5640000.00",
+            "source_text": "ITEM-A\nCotton twill fabric, 280 gsm\n12,000\nmetre\n470.00\n5,640,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-B",
+            "description": "Metal zipper, 18 cm",
+            "quantity": "20000",
+            "unit": "piece",
+            "unit_price": "37.00",
+            "line_total": "740000.00",
+            "source_text": "ITEM-B\nMetal zipper, 18 cm\n20,000\npiece\n37.00\n740,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-C",
+            "description": "Polyester sewing thread, High tenacity 40/2",
+            "quantity": "800",
+            "unit": "cone",
+            "unit_price": "205.00",
+            "line_total": "164000.00",
+            "source_text": "ITEM-C\nPolyester sewing thread, High tenacity\n40/2\n800\ncone\n205.00\n164,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-D",
+            "description": "Poly bag, 30 x 40 cm LDPE",
+            "quantity": "50000",
+            "unit": "piece",
+            "unit_price": "6.40",
+            "line_total": "320000.00",
+            "source_text": "ITEM-D\nPoly bag, 30 x 40 cm LDPE\n50,000\npiece\n6.40\n320,000.00",
+            "page_number": 1
+          },
+          {
+            "item_code": "ITEM-E",
+            "description": "Carton box, 5-ply corrugated export grade",
+            "quantity": "3000",
+            "unit": "piece",
+            "unit_price": "92.00",
+            "line_total": "276000.00",
+            "source_text": "ITEM-E\nCarton box, 5-ply corrugated export\ngrade\n3,000\npiece\n92.00\n276,000.00",
+            "page_number": 1
+          }
+        ]
+      },
+      "verification_notes": "VAT is not separately shown at 15% (all-inclusive clause) and stated subtotal contains an unexplained \u09f3120000 arithmetic mismatch."
+    }
+  ]
+}

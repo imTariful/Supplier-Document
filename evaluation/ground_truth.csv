@@ -1,0 +1,11 @@
+supplier_id,expected_decision,expected_rule_ids,verified_by,verification_notes
+PACK-01,APPROVE,,Senior QA Auditor,All 5 items priced <= max; exact quantities; advance 15% <= 20%; remaining payment 45d; delivery 25d <= 30d; penalty 0.5%/wk; VAT 15% separate; TIN & BIN valid; validity 60d >= 30d; arithmetic 100% correct.
+PACK-02,REJECT,R01,Senior QA Auditor,Item A quoted unit price ৳510.00 exceeds max price ৳480.00 by +6.25% which is greater than the 3% reject threshold.
+PACK-03,REJECT,R02,Senior QA Auditor,Advance payment demanded is 25% of total order value which exceeds the mandatory 20% ceiling.
+PACK-04,REJECT,R07,Senior QA Auditor,Late delivery penalty rate is stipulated at 0.25% per week which fails the required minimum threshold of 0.5% per week of order value.
+PACK-05,REJECT,R04|R05,Senior QA Auditor,Supplier TIN and BIN are both missing/unregistered in both quotation and supply agreement.
+PACK-06,REJECT,R06,Senior QA Auditor,Promised delivery schedule is 52 days after purchase order date exceeding the maximum allowable 45-day ceiling.
+PACK-07,NEEDS_HUMAN_REVIEW,H01|H04,Senior QA Auditor,Cotton twill fabric quoted at ৳488 (+1.67% above max price; within 0-3% minor deviation band) and delivery is 38 days (within 31-45 days window).
+PACK-08,NEEDS_HUMAN_REVIEW,H02,Senior QA Auditor,Cotton twill fabric quoted quantity is 10000 m compared to 12000 m requested (deviation is 16.67% which exceeds the 5% quantity tolerance).
+PACK-09,NEEDS_HUMAN_REVIEW,H03|H07,Senior QA Auditor,Remaining payment terms scheduled at 75 days after delivery (>60 days window) and quotation validity is 20 days (<30 days minimum).
+PACK-10,NEEDS_HUMAN_REVIEW,H05|H06,Senior QA Auditor,VAT is not separately shown at 15% (all-inclusive clause) and stated subtotal contains an unexplained ৳120000 arithmetic mismatch.

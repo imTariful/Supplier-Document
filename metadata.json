@@ -1,0 +1,6 @@
+{
+  "name": "Aamar Garments — AI Supplier Document Verification",
+  "description": "Deterministic AI-powered supplier document verification system with LangGraph orchestration, evidence-backed decision engine, and audit trail.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
